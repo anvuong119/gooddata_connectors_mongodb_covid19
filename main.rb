@@ -5,14 +5,10 @@ Mongo::Logger.logger.level = Logger::INFO
 
 def getDocumentString(document)
     begin
-        coordinates = document[:loc].nil? ? nil : document[:loc][:coordinates]
-        docStr = document[:country_iso3].nil? ? ',' : document[:country_iso3] + ','
+        coordinates = document[:loc][:coordinates]
+        docStr = document[:country_iso3] + ','
         docStr += document[:country] + ','
-        if not coordinates.nil?
-            docStr += coordinates[0].to_s + ';' + coordinates[1].to_s + ','
-        else
-            docStr += ';'
-        end
+        docStr += coordinates[0].to_s + ';' + coordinates[1].to_s + ','
         docStr += document[:population].to_s + ','
         docStr += document[:confirmed].to_s + ','
         docStr += document[:deaths].to_s + ','
@@ -20,7 +16,7 @@ def getDocumentString(document)
         docStr += document[:date].strftime("%m/%d/%Y")
         return docStr
     rescue StandardError => e
-        puts 'Error occurred in getDocumentString (document: ' + document.to_s + '): ' + e.to_s
+        # puts 'Error occurred in getDocumentString (document: ' + document.to_s + '): ' + e.to_s
         return ''
     end
 end
