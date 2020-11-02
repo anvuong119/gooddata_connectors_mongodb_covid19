@@ -1,0 +1,6 @@
+file|version|field|type|order
+City|default|ID|integer|1
+City|default|Name|string-255|2
+City|default|Country|string-255|3
+Zombie|default|ID|integer|1
+Zombie|default|Name|string-255|2

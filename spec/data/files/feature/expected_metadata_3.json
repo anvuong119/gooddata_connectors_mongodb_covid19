@@ -1,0 +1,52 @@
+{
+  "metadata_version": "${metadata_version}",
+  "id": "City",
+  "name": "City",
+  "custom": {
+    "export_type": "full",
+    "hub": [
+      "id"
+    ],
+    "automatic": true,
+    "download_by": "csv",
+    "skip_rows": "1",
+    "column_separator": ",",
+    "file_format": ""
+  },
+  "fields": [
+    {
+      "id": "ID",
+      "name": "ID",
+      "order": "g1",
+      "type": "integer",
+      "custom": {
+        "order": "1"
+      },
+      "enabled": true
+    },
+    {
+      "id": "Name",
+      "name": "Name",
+      "order": "g2",
+      "type": "string-255",
+      "custom": {
+        "order": "2"
+      },
+      "enabled": true
+    },
+    {
+      "id": "Country",
+      "name": "Country",
+      "order": "g3",
+      "type": "string-255",
+      "custom": {
+        "order": "3"
+      },
+      "enabled": true
+    }
+  ],
+  "enabled": true,
+  "type": "input|output",
+  "dependent_on": null,
+  "version": "default"
+}

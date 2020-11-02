@@ -1,0 +1,4 @@
+file|version|field|type|order|encoding
+Event|1.0|ID|integer|1|BLOCKDICT_COMP
+Event|1.0|Title|string-255|2|ZSTD_FAST_COMP
+Event|1.0|Place|string-255|3|ZSTD_HIGH_COMP

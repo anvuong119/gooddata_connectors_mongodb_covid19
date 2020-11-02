@@ -1,14 +1,20 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aws-sdk-v1 (1.67.0)
+      json (~> 1.4)
+      nokogiri (~> 1)
     bson (4.11.0-java)
+    json (1.8.6-java)
     mongo (2.13.1)
       bson (>= 4.8.2, < 5.0.0)
+    nokogiri (1.10.10-java)
 
 PLATFORMS
   java
 
 DEPENDENCIES
+  aws-sdk-v1 (~> 1.67)
   mongo (~> 2.13)
 
 BUNDLED WITH

@@ -1,0 +1,37 @@
+{
+  "entities": {
+    "Event": {
+      "global": {
+        "custom": {
+          "hub":["id"]
+
+        }
+      }
+    }
+  },"integrators": {
+},"downloaders":{
+  "csv_downloader_1":{
+    "type":"csv",
+    "entities":["Event"]
+  }
+},
+  "csv": {
+    "type": "s3",
+    "options": {
+      "bucket": "msf-dev-grest",
+      "access_key": "$CFG_BDS_ACCESS_KEY",
+      "secret_key": "$CFG_BDS_SECRET_KEY",
+      "manifest": "manifest_{sequence}.{time(%Y%m%d%H%M%S)}",
+      "manifest_process_type": "move",
+      "generate_manifests": true,
+      "data_location": "ETL_tests/connectors_downloader_csv/$REMOTE_TESTING_FOLDER/data_files",
+      "move_data_after_processing_to_path": "ETL_tests/connectors_downloader_csv/$REMOTE_TESTING_FOLDER/data_files/data_processed",
+      "delete_data_after_processing": true,
+      "files_structure": {
+        "skip_rows": "1",
+        "column_separator": ",",
+        "file_format": "csv"
+      }
+    }
+  }
+}

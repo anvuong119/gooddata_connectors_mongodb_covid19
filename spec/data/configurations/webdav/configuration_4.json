@@ -1,0 +1,46 @@
+{
+  "entities": {
+    "City": {
+      "global": {
+        "custom": {
+          "hub":["id"]
+        }
+      }
+    },
+    "Zombie": {
+      "global": {
+        "custom": {
+          "hub":["id"],
+          "skip_rows":"4"
+        }
+      }
+    }
+  },"integrators": {
+},"downloaders":{
+  "csv_downloader_1":{
+    "type":"csv",
+    "entities":["City", "Zombie"]
+  }
+},
+  "csv": {
+    "type": "webdav",
+    "options": {
+      "host":"$WEBDAV_HOST",
+      "username":"$WEBDAV_USERNAME",
+      "password":"$WEBDAV_PASSWORD",
+      "default_folder":"uploads",
+      "folder":"ETL_tests/integration_test/$REMOTE_TESTING_FOLDER/manifests",
+      "manifest": "manifest_{sequence}.{time(%Y%m%d%H%M%S)}",
+      "manifest_process_type": "move",
+      "generate_manifests": false,
+      "data_structure_info":"ETL_tests/integration_test/$REMOTE_TESTING_FOLDER/feed",
+      "ignore_columns_check": false,
+      "data_location": "ETL_tests/integration_test/$REMOTE_TESTING_FOLDER/",
+      "files_structure": {
+        "skip_rows": "1",
+        "column_separator": ",",
+        "file_format": "xls"
+      }
+    }
+  }
+}

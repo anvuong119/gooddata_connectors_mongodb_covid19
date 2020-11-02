@@ -37,6 +37,15 @@ def writeDataToFile(client)
     end
 end
 
+def uploadToS3(filename)
+    begin
+        S3Helper = GoodData::Connectors::DownloaderCsv::S3Helper
+        S3Helper.upload_file(filename, S3Helper.generate_remote_path(filename))
+    rescue StandardError => e
+        puts 'Error occurred while uploading csv file to S3: ' + e.to_s
+    end
+end
+
 begin
     puts 'Connecting to server...'
     client = Mongo::Client.new('mongodb+srv://readonly:readonly@covid-19.hip2i.mongodb.net/covid19')
@@ -46,6 +55,10 @@ begin
 
     client.close
     puts 'Fetching data completed.'
+
+    puts 'Uploading csv file to S3...'
+    uploadToS3('covid19.csv')
+    puts 'Uploading csv file to S3 completed.'
 rescue Mongo::Error::NoServerAvailable => e
     puts 'Could not connect to server: ' + e.to_s
 end

@@ -1,0 +1,51 @@
+{
+  "metadata_version": "${metadata_version}",
+  "id": "Event",
+  "name": "Event",
+  "custom": {
+    "hub": [
+      "id"
+    ],
+    "automatic": true,
+    "download_by": "csv",
+    "skip_rows": "1",
+    "column_separator": ",",
+    "file_format": "gzip"
+  },
+  "fields": [
+    {
+      "id": "ID",
+      "name": "ID",
+      "order": "g1",
+      "type": "integer",
+      "custom": {
+        "order": "1"
+      },
+      "enabled": true
+    },
+    {
+      "id": "Title",
+      "name": "Title",
+      "order": "g2",
+      "type": "string-255",
+      "custom": {
+        "order": "2"
+      },
+      "enabled": true
+    },
+    {
+      "id": "Place",
+      "name": "Place",
+      "order": "g3",
+      "type": "string-255",
+      "custom": {
+        "order": "3"
+      },
+      "enabled": true
+    }
+  ],
+  "enabled": true,
+  "type": "input|output",
+  "dependent_on": null,
+  "version": "1.2"
+}

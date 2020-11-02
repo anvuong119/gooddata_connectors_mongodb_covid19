@@ -1,0 +1,47 @@
+{
+  "general": {
+    "internal_batch_id": 1,
+    "exported_at": "2007-11-19T08:37:48-06:00",
+    "batch_indentification": "batch1"
+  },
+  "entities": {
+    "entity1": {
+      "fields": [
+        {
+          "id": "Id",
+          "type": "string-255"
+        },
+        {
+          "id": "IsDeleted",
+          "type": "boolean"
+        }
+      ],
+      "files": [
+        {
+          "path": "spec/data/Opportunity.csv",
+          "number_of_lines": 23123,
+          "md5": "f4oru20q93edupaeuq1e"
+        }
+      ]
+    },
+    "entity2": {
+      "fields": [
+        {
+          "id": "Id",
+          "type": "string-255"
+        },
+        {
+          "id": "OpportunityId",
+          "type": "string-255"
+        }
+      ],
+      "files": [
+        {
+          "path": "spec/data/OpportunityHistory.csv",
+          "number_of_lines": 23123,
+          "md5": "f4oru20q93edupaeuq1e"
+        }
+      ]
+    }
+  }
+}

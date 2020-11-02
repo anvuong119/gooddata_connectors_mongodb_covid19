@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "Event": {
+      "global": {
+        "custom": {
+          "hub":["id"]
+
+        }
+      }
+    }
+  },"integrators": {
+},"downloaders":{
+  "csv_downloader_1":{
+    "type":"csv",
+    "entities":["Event"]
+  }
+},
+  "csv": {
+    "type": "one_drive",
+    "options": {
+      "folder": "manifests/",
+      "client_id":"4804f301-e2b7-4225-8ae5-8b8280c743c5",
+      "token": "$ONEDRIVE_TOKEN",
+      "generate_manifests": true,
+      "manifest_process_type": "move",
+      "data_location": "data/",
+      "files_structure": {
+        "skip_rows": "1",
+        "column_separator": ",",
+        "file_format": ""
+      }
+    }
+  }
+}

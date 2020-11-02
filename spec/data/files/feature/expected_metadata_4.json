@@ -1,0 +1,41 @@
+{
+  "metadata_version": "${metadata_version}",
+  "id": "Zombie",
+  "name": "Zombie",
+  "custom": {
+    "hub": [
+      "id"
+    ],
+    "skip_rows": "4",
+    "automatic": true,
+    "download_by": "csv",
+    "column_separator": ",",
+    "file_format": ""
+  },
+  "fields": [
+    {
+      "id": "ID",
+      "name": "ID",
+      "order": "g1",
+      "type": "integer",
+      "custom": {
+        "order": "1"
+      },
+      "enabled": true
+    },
+    {
+      "id": "Name",
+      "name": "Name",
+      "order": "g2",
+      "type": "string-255",
+      "custom": {
+        "order": "2"
+      },
+      "enabled": true
+    }
+  ],
+  "enabled": true,
+  "type": "input|output",
+  "dependent_on": null,
+  "version": "1.0"
+}

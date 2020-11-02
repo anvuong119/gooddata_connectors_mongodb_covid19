@@ -1,0 +1,11 @@
+{
+  "identification": "csv_downloader_1",
+  "sequence": 1,
+  "filename": "manifest-copart-gd-INTERNALPROVISION_8.20150811210000",
+  "files": [
+    {
+      "entity": "INTERNALPROVISION",
+      "file": "ETL_tests/Copart/qa/internalprovision/INTERNALPROVISION/2015/08/12/1439344292_data.gz"
+    }
+  ]
+}

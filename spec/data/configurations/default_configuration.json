@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "Event": {
+      "global": {
+        "custom": {
+          "hub":["id"]
+
+        }
+      }
+    }
+  },"integrators": {
+},"downloaders":{
+  "csv_downloader_1":{
+    "type":"csv",
+    "entities":["Event"]
+  }
+},
+  "csv": {
+    "type": "s3",
+    "options": {
+      "bucket": "msf-dev-grest",
+      "folder": "ETL_tests/WalkMe/data",
+      "data_structure_info": "ETL_tests/WalkMe/data/feed.csv",
+      "access_key": "$CFG_BDS_ACCESS_KEY",
+      "secret_key": "$CFG_BDS_SECRET_KEY",
+      "manifest": "manifest_{time(%s)}.csv",
+      "manifest_process_type": "history",
+      "files_structure": {
+        "skip_rows": "1",
+        "column_separator": ","
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "entities": {
+    "City": {
+      "global": {
+        "custom": {
+          "export_type": "full",
+          "hub":["id"]
+        }
+      }
+    },
+    "Zombie": {
+      "global": {
+        "custom": {
+          "hub":["id"]
+        }
+      }
+    }
+  },"integrators": {
+},"downloaders":{
+  "csv_downloader_1":{
+    "type":"csv",
+    "entities":["City", "Zombie"]
+  }
+},
+  "csv": {
+    "type": "s3",
+    "options": {
+      "bucket": "msf-dev-grest",
+      "folder": "ETL_tests/connectors_downloader_csv/$REMOTE_TESTING_FOLDER/manifests",
+      "data_structure_info":"ETL_tests/connectors_downloader_csv/$REMOTE_TESTING_FOLDER/feed",
+      "access_key": "$CFG_BDS_ACCESS_KEY",
+      "secret_key": "$CFG_BDS_SECRET_KEY",
+      "generate_manifests": true,
+      "ignore_columns_check": false,
+      "manifest": "manifest_{sequence}.{time(%Y%m%d%H%M%S)}",
+      "manifest_process_type": "move",
+      "data_location": "ETL_tests/connectors_downloader_csv/$REMOTE_TESTING_FOLDER/data_files",
+      "move_data_after_processing_to_path": "ETL_tests/connectors_downloader_csv/$REMOTE_TESTING_FOLDER/data_files/data_processed",
+      "delete_data_after_processing": true,
+      "files_structure": {
+        "skip_rows": "1",
+        "column_separator": ",",
+        "file_format": "xlsx"
+      }
+    }
+  }
+}

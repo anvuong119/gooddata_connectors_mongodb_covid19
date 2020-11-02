@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "Event": {
+      "global": {
+        "custom": {
+          "hub":["ID"],
+          "encryption": "pgp_encryption"
+        }
+      }
+    }
+  },"integrators": {
+},"downloaders":{
+  "csv_downloader_1":{
+    "type":"csv",
+    "entities":["Event"]
+  }
+},
+  "csv": {
+    "type": "s3",
+    "options": {
+      "encryption": "pgp_encryption_meta",
+      "encrypted_meta": true,
+      "bucket": "msf-dev-grest",
+      "folder": "ETL_tests/connectors_downloader_csv/$REMOTE_TESTING_FOLDER/manifests",
+      "generate_manifests": true,
+      "manifest": "manifest_{time(%Y%m%d%H%M%S)}.csv.pgp",
+      "manifest_process_type": "move",
+      "use_link_file":false,
+      "data_location": "ETL_tests/connectors_downloader_csv/$REMOTE_TESTING_FOLDER/data_files",
+      "files_structure": {
+        "skip_rows": "1",
+        "column_separator": ","
+      }
+    }
+  },
+  "pgp_encryption": {
+    "type": "pgp",
+    "passphrase": "${pgp_passphrase}"
+  },
+  "pgp_encryption_meta": {
+    "type": "pgp",
+    "passphrase": "${pgp_passphrase}"
+  }
+}

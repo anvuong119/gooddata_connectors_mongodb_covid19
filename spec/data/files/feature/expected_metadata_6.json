@@ -1,0 +1,51 @@
+{
+  "metadata_version": "${metadata_version}",
+  "id": "Opportunity",
+  "name": "Opportunity",
+  "custom": {
+    "hub": [
+      "id"
+    ],
+    "export_type": "inc",
+    "automatic": true,
+    "download_by": "csv",
+    "skip_rows": "1",
+    "column_separator": ","
+  },
+  "fields": [
+    {
+      "id": "ID",
+      "name": "ID",
+      "order": "g1",
+      "type": "string-255",
+      "custom": {
+        "order": "0"
+      },
+      "enabled": true
+    },
+    {
+      "id": "Country",
+      "name": "Country",
+      "order": "g2",
+      "type": "string-255",
+      "custom": {
+        "order": "1"
+      },
+      "enabled": true
+    },
+    {
+      "id": "System",
+      "name": "System",
+      "order": "g3",
+      "type": "string-255",
+      "custom": {
+        "order": "2"
+      },
+      "enabled": true
+    }
+  ],
+  "enabled": true,
+  "type": "input|output",
+  "dependent_on": null,
+  "version": "default"
+}
